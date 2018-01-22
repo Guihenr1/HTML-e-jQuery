@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/typeahead.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+    <div>Testando 1</div>
+    <div>Testando 2</div>
+    <script>
+        (function ($){
+            $.fn.out_in_Fade = function(customOptions){
+                var op = $.extend({}, $.fn.out_in_Fade.defaltOptions,customOptions || {});
+                return this.each(function(){
+                    $(this).fadeOut().fadeIn('normal', function(){
+                        if($.isFunction(op.complete))
+                        {
+                            op.complete.apply(this);
+                        }
+                    });
+                });
+                $.fn.out_in_Fade.defaltOptions = {
+                    complete:null
+                }
+            };
+        })(jQuery); jQuery('div').out_in_Fade({
+            complete: function(){$(this).css('background', '#ff9');}
+        });
+    </script>
+</body>
+</html>
