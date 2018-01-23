@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/typeahead.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <style type="text/csss">
+        div
+        {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            color: white;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>R$:1.000,00</div>
+    <div class="esconder">Esconder Saldo</div>
+    <div>Mostrar Saldo</div>
+    <script>
+        (function(){
+            $('.esconder').click(function(){
+                $('div:first').hide(1000);
+            });
+
+            $('div:last').click(function(){
+                $('div:first').show(1000);
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>
